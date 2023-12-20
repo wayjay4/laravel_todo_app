@@ -25,4 +25,14 @@ class StoreTaskRequest extends FormRequest
             'name' => 'required',
         ];
     }
+
+    /**
+     * @return string[]
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'A task name is required.',
+        ];
+    }
 }

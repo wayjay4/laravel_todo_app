@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [TaskController::class, 'index']);
 Route::resource('/tasks', TaskController::class);
 Route::put('/tasks/{task}/toggle_completed', [TaskController::class, 'toggleTaskCompleted'])->name('tasks.toggledCompleted');
 Route::post('/tasks/update_task_priorities', [TaskController::class, 'updateTaskPriorities'])->name('tasks.updateTaskPriorities');
